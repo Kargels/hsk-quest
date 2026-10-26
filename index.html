@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fbf8f1"><title>HSK Quest · Глеб · v0.3.2</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fbf8f1"><title>HSK Quest · Глеб · v0.3.4</title>
 <style>
 :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#242a2a;background:#fbf8f1;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100dvh}button{font:inherit;cursor:pointer}button:disabled{opacity:.45;cursor:default}.app{max-width:490px;margin:auto;min-height:100dvh;padding:22px 20px 102px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.logo{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.5px;font-size:19px}.mark{background:#e85b48;border-radius:14px;color:white;padding:10px;font-size:19px}.eyebrow{font-size:12px;letter-spacing:.1em;font-weight:800;color:#777f7b;text-transform:uppercase}.date{font-size:13px;color:#67736e}.title{font-size:32px;letter-spacing:-1.2px;line-height:1.13;margin:10px 0 8px}.muted{color:#6b7773;font-size:14px;line-height:1.5}.card{background:#fff;border:1px solid #ece9e0;border-radius:23px;padding:21px;margin:18px 0;box-shadow:0 7px 28px #3b4a3610}.hero{background:#173e36;color:white;border:0;padding:25px}.hero .muted{color:#d0ded8}.hero .eyebrow{color:#a6c4b9}.hero strong{font-size:26px}.progress{height:10px;background:#dfe8e1;border-radius:20px;overflow:hidden;margin:15px 0}.progress>div{height:100%;background:#ea765d;transition:width .25s}.hero .progress{background:#386155}.primary{width:100%;border:0;background:#e65a45;color:white;border-radius:17px;padding:17px 18px;font-weight:800;min-height:54px;box-shadow:0 5px 12px #e75a4325}.secondary{width:100%;border:1px solid #d9ded8;background:white;color:#263b34;border-radius:15px;padding:14px;font-weight:700;min-height:49px}.textbutton{border:0;background:transparent;color:#4f7063;font-weight:700;padding:10px}.section{font-weight:850;font-size:18px;margin-top:26px}.task{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #eef0eb}.task:last-child{border:0}.taskIcon{width:48px;height:48px;flex:none;display:grid;place-items:center;background:#f6eee4;border-radius:15px;font-size:23px}.taskName{font-weight:750}.task small{color:#77827c;display:block;margin-top:4px}.tag{margin-left:auto;font-size:12px;color:#6b8478}.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e7ebe6;padding:10px max(12px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-bottom));display:flex;justify-content:center;gap:10px;z-index:10}.nav button{background:none;border:0;min-width:94px;color:#7c8983;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:5px}.nav button b{font-size:22px}.nav button.active{color:#db5845}.hidden{display:none!important}.question{font-size:14px;color:#6d7872;font-weight:650;margin-top:20px}.hanzi{font-size:83px;line-height:1.5;text-align:center;margin:22px 0 8px;font-weight:500;font-family:'PingFang SC','Noto Sans CJK SC',system-ui,sans-serif}.pinyin{text-align:center;color:#738079;font-size:19px;min-height:25px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:24px 0}.answer{border:2px solid #e8e9e3;background:white;min-height:75px;border-radius:17px;padding:12px;color:#26312e;font-weight:750;font-size:17px;overflow-wrap:anywhere}.answer.selected{border-color:#df624b;background:#fff3ed}.answer.correct{border-color:#438b6d;background:#ecf8f0}.answer.wrong{border-color:#d45a55;background:#fff0ee}.feedback{border-radius:15px;background:#e8f5e9;padding:16px;line-height:1.5;margin:14px 0}.feedback.bad{background:#fff0e9}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.mini{font-size:12px;color:#7a8580}.pill{padding:6px 11px;background:#f8eee8;border-radius:40px;color:#a15342;font-weight:750;font-size:12px}.resultNumber{font-size:64px;font-weight:850;letter-spacing:-3px;line-height:1.2}.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.stat{padding:18px;background:#f5f7f3;border-radius:17px}.stat strong{display:block;font-size:29px;margin-top:5px}.history{padding:13px 0;border-bottom:1px solid #e8ebe7}.history:last-child{border-bottom:0}.notice{background:#fff7e9;border:1px solid #f3deb3;padding:12px;border-radius:13px;color:#8b6228;font-size:12px;line-height:1.5;margin-top:18px}.back{border:0;background:transparent;font-weight:750;color:#5b7066;font-size:15px;padding:10px 0}.empty{padding:35px 12px;text-align:center;color:#7b8881}.words{display:grid;gap:9px}.word{display:flex;justify-content:space-between;gap:10px;border:1px solid #e8ebe5;background:white;border-radius:13px;padding:13px}.word strong{font-size:23px}.word em{font-size:12px;color:#78847c;font-style:normal}.toggle{display:flex;gap:8px}.toggle button{flex:1;border-radius:13px;padding:12px;border:1px solid #ddd;background:white;font-weight:700}.toggle button.active{background:#1b4d3f;color:white}footer{text-align:center;font-size:11px;color:#98a39c;margin-top:25px}@media(min-width:600px){body{background:#e9eee9}.app{background:#fbf8f1;box-shadow:0 0 40px #23382d15}.nav{max-width:490px;margin:auto}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .audioControls{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.audioBtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #b9cfc3;background:#edf6ef;color:#174a39;border-radius:14px;padding:12px 14px;font-weight:800;min-height:47px}.audioBtn:disabled{opacity:.5}.audioStatus{font-size:12px;color:#6b7773;line-height:1.4}.audioError{background:#fff0e9;color:#924c32;border-radius:12px;padding:11px;font-size:13px;margin:10px 0}.answer:focus-visible,.audioBtn:focus-visible{outline:3px solid #2a8468;outline-offset:2px}.modeTag{display:inline-block;border-radius:99px;background:#e6f0eb;color:#265c49;padding:6px 10px;font-size:12px;font-weight:800}.speakerRow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.speakerRow button{padding:8px 11px;min-height:38px}.noticeLine{margin:10px 0 0}.srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-/* Listening task UI v0.3.2 */
+/* Listening task UI v0.3.4 */
 .listenStage{text-align:center;padding:24px 4px 8px}
 .listenPlay{width:118px;height:118px;border:12px solid #e5f3ea;border-radius:50%;background:#289361;color:white;display:inline-flex;align-items:center;justify-content:center;font-size:46px;box-shadow:0 4px 14px #155d3520;cursor:pointer}
 .listenPlay:active{transform:scale(.97)}
@@ -26,7 +26,7 @@
 .listenFeedback.wrong{color:#a34438}
 .listenNext{background:#195842}
 @media(max-width:380px){.listenPlay{width:102px;height:102px}.listenWordHanzi{font-size:31px}}
-</style></head><body><main class="app"><header class="top"><div class="logo"><span class="mark">学</span>HSK Quest</div><span class="pill">HSK 2 · 3.0</span></header><div id="content"></div><footer>HSK Quest v0.3.2 · результаты хранятся на этом устройстве · MP3 пока пробные</footer></main><nav class="nav" id="nav"><button data-page="home"><b>⌂</b>Сегодня</button><button data-page="vocab"><b>字</b>Слова</button><button data-page="progress"><b>▥</b>Прогресс</button></nav>
+</style></head><body><main class="app"><header class="top"><div class="logo"><span class="mark">学</span>HSK Quest</div><span class="pill">HSK 2 · 3.0</span></header><div id="storage-message" class="notice hidden" role="alert"></div><div id="content"></div><footer>HSK Quest v0.3.4 · результаты хранятся на этом устройстве · MP3 пока пробные</footer></main><nav class="nav" id="nav"><button data-page="home"><b>⌂</b>Сегодня</button><button data-page="vocab"><b>字</b>Слова</button><button data-page="progress"><b>▥</b>Прогресс</button></nav>
 <script>
 'use strict';
 // Демонстрационный учебный пакет, НЕ официальный список HSK 3.0.
@@ -42,23 +42,91 @@ const VOCAB=[
 {id:'dianhua',hanzi:'电话',pinyin:'diànhuà',ru:'телефон',d:['телефон','компьютер','автомобиль','книга']},
 {id:'zhunbei',hanzi:'准备',pinyin:'zhǔnbèi',ru:'готовиться',d:['готовиться','покупать','слышать','сидеть']}
 ];
-const DB='hsk-quest-v1';let db, page='home', state, index=0, selection=null, checked=false, degraded=false;
+const DB='hsk-quest-v1';let db, page='home', state, selection=null, checked=false, busy=false, readOnly=false, savedSnapshot, rawSaved;
 const $=s=>document.querySelector(s), safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function openDB(){return new Promise((resolve,reject)=>{let r=indexedDB.open(DB,1);r.onupgradeneeded=()=>r.result.createObjectStore('state');r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
-function transaction(mode='readonly'){return db.transaction('state',mode).objectStore('state')}
-function read(){return new Promise((res,rej)=>{let r=transaction().get('main');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
-function write(){return new Promise((res,rej)=>{let r=transaction('readwrite').put(state,'main');r.onsuccess=()=>res();r.onerror=()=>rej(r.error)})}
+// Keep the existing database, store and key. Never rewrite data during startup.
+function openDB(){return new Promise((resolve,reject)=>{
+ const r=indexedDB.open(DB,1);
+ r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains('state'))r.result.createObjectStore('state')};
+ r.onsuccess=()=>{r.result.onversionchange=()=>{r.result.close();readOnly=true;storageMessage('База обновлена в другой вкладке. Обнови страницу.');};resolve(r.result)};
+ r.onerror=()=>reject(r.error);
+ r.onblocked=()=>storageMessage('Закрой другие вкладки HSK Quest и повтори запуск.');
+})}
+function read(){return new Promise((resolve,reject)=>{
+ const tx=db.transaction('state','readonly');const r=tx.objectStore('state').get('main');
+ tx.oncomplete=()=>resolve(r.result);tx.onabort=()=>reject(tx.error||new Error('Чтение прервано'));tx.onerror=()=>{};
+})}
+function write(candidate){return new Promise((resolve,reject)=>{
+ const tx=db.transaction('state','readwrite'),store=tx.objectStore('state');let conflict=false;
+ // Compare inside the same transaction, so another tab cannot silently overwrite progress.
+ const r=store.get('main');
+ r.onsuccess=()=>{if(JSON.stringify(r.result)!==savedSnapshot){conflict=true;tx.abort();return}store.put(candidate,'main')};
+ tx.oncomplete=()=>resolve();
+ tx.onerror=()=>{};
+ tx.onabort=()=>reject(new Error(conflict?'Прогресс изменён в другой вкладке. Обнови страницу перед продолжением.':'Не удалось сохранить прогресс. Предыдущие данные сохранены. Повтори действие.'));
+})}
+function storageMessage(message){const el=$('#storage-message');if(el){el.textContent=message;el.classList.toggle('hidden',!message)}}
+function setBusy(value){busy=value;document.querySelectorAll('button').forEach(el=>{if(value){el.dataset.wasDisabled=String(el.disabled);el.disabled=true}else if('wasDisabled' in el.dataset){el.disabled=el.dataset.wasDisabled==='true';delete el.dataset.wasDisabled}})}
+async function commit(candidate){
+ await write(candidate);
+ state=candidate;rawSaved=candidate;savedSnapshot=JSON.stringify(candidate);
+}
+const isObject=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
+const isCount=x=>Number.isSafeInteger(x)&&x>=0;
+const validDay=x=>typeof x==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x)&&!Number.isNaN(Date.parse(x+'T12:00:00'))&&new Date(x+'T12:00:00Z').toISOString().slice(0,10)===x;
+function validateState(saved){
+ if(saved===undefined)return newState();
+ const fail=()=>{throw new Error('Сохранённые данные повреждены или имеют неподдерживаемый формат. Оригинал не изменён. Скачай копию для восстановления.')};
+ if(!isObject(saved)||saved.version!==1||!Array.isArray(saved.sessions)||!isObject(saved.wordProgress))fail();
+ const copy=structuredClone(saved);
+ for(const p of Object.values(copy.wordProgress))if(!isObject(p)||!isCount(p.seen)||!isCount(p.correct)||p.correct>p.seen)fail();
+ function session(s,finished){
+  if(!isObject(s)||typeof s.id!=='string'||!s.id||!validDay(s.day)||!Array.isArray(s.items)||!s.items.length||new Set(s.items).size!==s.items.length||!Array.isArray(s.answers)||!isCount(s.cursor)||s.cursor>=s.items.length)fail();
+  if(s.lessonKey!==undefined&&(typeof s.lessonKey!=='string'||!s.lessonKey))fail();
+  if(s.completedDay!==undefined&&!validDay(s.completedDay))fail();
+  if(s.optionSets!==undefined&&!isObject(s.optionSets))fail();
+  for(const key of s.items){
+   if(typeof key!=='string')fail();
+   const w=VOCAB.find(w=>w.id===key.replace(/^listen:/,''));if(!w)fail();
+   const options=optionsFor(s,key,w);
+   if(!Array.isArray(options)||options.length!==4||options.some(x=>typeof x!=='string')||new Set(options).size!==4||!options.includes(w.ru))fail();
+  }
+  const keys=new Set();
+  for(const answer of s.answers){
+   if(!isObject(answer))fail();
+   const key=answer.questionKey??answer.wordId,position=s.items.indexOf(key);
+   if(position<0||keys.has(key)||(!finished&&position>s.cursor))fail();keys.add(key);
+   const word=VOCAB.find(w=>w.id===key.replace(/^listen:/,''));
+   if(answer.wordId!==word.id||!isCount(answer.choice)||answer.choice>=4||typeof answer.correct!=='boolean'||answer.correct!==(optionsFor(s,key,word)[answer.choice]===word.ru))fail();
+   const mode=key.startsWith('listen:')?'listening':'visual';
+   if(answer.mode!==undefined&&answer.mode!==mode)fail();
+   // Legacy visual answers did not have questionKey or mode. Normalize only in memory.
+   answer.questionKey=key;answer.mode=mode;
+  }
+  if(s.items.slice(0,s.cursor).some(key=>!keys.has(key)))fail();
+  if(finished&&(s.answers.length!==s.items.length||s.total!==s.answers.length||s.correct!==s.answers.filter(a=>a.correct).length))fail();
+ }
+ copy.sessions.forEach(s=>session(s,true));
+ if(copy.session!==null)session(copy.session,false);
+ return copy;
+}
+function recovery(err){
+ readOnly=true;stopAudio();$('#nav').classList.add('hidden');storageMessage(err.message);
+ $('#content').innerHTML='<h1 class="title">Прогресс требует проверки</h1><p class="muted">Данные остались в базе без изменений. Продолжение временно недоступно, чтобы не перезаписать результаты.</p><button class="secondary" data-action="export">Скачать исходные данные</button><button class="textbutton" data-action="reload">Повторить запуск</button>';
+}
 // Аудио воспроизводится из локальных файлов audio/*.mp3; голос устройства не требуется.
 let activeAudio=null;
+function stopAudio(){const player=activeAudio;activeAudio=null;if(player){player.onerror=null;player.pause();try{player.currentTime=0}catch{}}}
+window.addEventListener('pagehide',stopAudio);
 function playWord(id,slow=false){
  const word=VOCAB.find(x=>x.id===id);if(!word)return;
- if(activeAudio){activeAudio.pause();activeAudio.currentTime=0}
+ stopAudio();const message=$('#audio-message');if(message)message.classList.add('hidden');
  const player=new Audio(`audio/${encodeURIComponent(id)}.mp3`);
  activeAudio=player;
  player.preload='auto';player.playbackRate=slow?0.78:1;
  if('preservesPitch' in player)player.preservesPitch=true;
- player.onerror=()=>showAudioError('Не найден файл озвучки. Проверь папку audio рядом с index.html.');
- player.play().catch(()=>showAudioError('Не удалось включить MP3. Проверь подключение к интернету и нажми «Слушать» ещё раз.'));
+ player.onerror=()=>{if(activeAudio===player)showAudioError('Не удалось загрузить MP3. Проверь подключение и попробуй ещё раз.')};
+ player.play().catch(error=>{if(activeAudio===player&&error.name!=='AbortError')showAudioError('Не удалось включить MP3. Нажми «Слушать» ещё раз.')});
 }
 function showAudioError(message){let place=document.querySelector('#audio-message');if(place){place.textContent=message;place.classList.remove('hidden')}else alert(message)}
 function shuffle(array){const a=[...array];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
@@ -67,15 +135,17 @@ function audioButtons(id){return `<div class="audioControls"><button class="audi
 const newState=()=>({version:1,session:null,sessions:[],wordProgress:{},createdAt:new Date().toISOString()});
 const day=()=>{let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
 const txtDate=d=>new Date(d+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
-function navigate(to){page=to;selection=null;checked=false;render()}
-function render(){const nav=['home','vocab','progress'].includes(page);$('#nav').classList.toggle('hidden',!nav);document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));let node=$('#content');if(page==='home')node.innerHTML=home();if(page==='quiz')node.innerHTML=quiz();if(page==='result')node.innerHTML=result();if(page==='vocab')node.innerHTML=vocab();if(page==='progress')node.innerHTML=progress();bind()}
-function todays(){return state.sessions.find(x=>x.day===day())}
-function home(){let session=state.session,done=todays();let count=state.sessions.length;return `<span class="eyebrow">${safe(new Date().toLocaleDateString('ru-RU',{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="title">Привет, Глеб! 👋</h1><p class="muted">Каждый день — ещё один шаг к китайскому.</p><section class="card hero"><div class="eyebrow">Твоя цель</div><div style="margin-top:10px"><strong>HSK 2</strong> · май 2027</div><p class="muted">Тренируйся понемногу, но регулярно.</p><div class="progress"><div style="width:${Math.min(100,count/40*100)}%"></div></div><div class="mini" style="color:#c4ddd0">${count} занятий завершено · первый этап 40 занятий</div></section><h2 class="section">${done?'Сегодня выполнено ✨':'Тренировка сегодня'}</h2><section class="card"><div class="row"><strong>${done?'Отличная работа!':'Слова и короткий тест'}</strong><span class="pill">${done?'Готово':'15 заданий'}</span></div><div class="task"><div class="taskIcon">字</div><div><div class="taskName">Знакомство со словами</div><small>10 слов · иероглифы и значения</small></div></div><div class="task"><div class="taskIcon">♫</div><div><div class="taskName">Слушай и узнавай</div><small>5 заданий на слух без подсказок</small></div></div><div class="task"><div class="taskIcon">✓</div><div><div class="taskName">Мини-тест</div><small>Автоматическая проверка ответов</small></div></div><p class="muted">${session?'Есть незавершённое занятие — продолжи с последнего вопроса.':done?'Результат сохранён. Завтра можно выполнить новую тренировку.':'Уже доступны карточки и задания на слух. Чтение и диалоги добавим позже.'}</p><button class="primary" data-action="${session?'resume':done?'view-result':'start'}">${session?'Продолжить тренировку':done?'Посмотреть результат':'Начать тренировку'} →</button></section><div class="notice">Учебный контент и MP3-озвучка пробные: роботизированный голос, произношение ещё не проверено преподавателем. Не использовать как эталон китайских тонов.</div>`}
+function navigate(to){if(busy||readOnly)return;stopAudio();page=to;selection=null;checked=false;render()}
+function render(){const nav=['home','vocab','progress'].includes(page);$('#nav').classList.toggle('hidden',!nav);document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));let node=$('#content');if(page==='home')node.innerHTML=home();if(page==='quiz')node.innerHTML=quiz();if(page==='result')node.innerHTML=result();if(page==='vocab')node.innerHTML=vocab();if(page==='progress')node.innerHTML=progress();}
+function todays(){return state.sessions.slice().reverse().find(x=>(x.completedDay||x.day)===day())}
+function lessonKey(s){return s.lessonKey||'daily:'+s.day}
+function uniqueLessons(){return new Set(state.sessions.map(lessonKey)).size}
+function home(){let session=state.session,done=todays();let count=uniqueLessons();return `<span class="eyebrow">${safe(new Date().toLocaleDateString('ru-RU',{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="title">Привет, Глеб! 👋</h1><p class="muted">Каждый день — ещё один шаг к китайскому.</p><section class="card hero"><div class="eyebrow">Твоя цель</div><div style="margin-top:10px"><strong>HSK 2</strong> · май 2027</div><p class="muted">Тренируйся понемногу, но регулярно.</p><div class="progress"><div style="width:${Math.min(100,count/40*100)}%"></div></div><div class="mini" style="color:#c4ddd0">${count} занятий завершено · первый этап 40 занятий</div></section><h2 class="section">${done?'Сегодня выполнено ✨':'Тренировка сегодня'}</h2><section class="card"><div class="row"><strong>${done?'Отличная работа!':'Слова и короткий тест'}</strong><span class="pill">${done?'Готово':'15 заданий'}</span></div><div class="task"><div class="taskIcon">字</div><div><div class="taskName">Знакомство со словами</div><small>10 слов · иероглифы и значения</small></div></div><div class="task"><div class="taskIcon">♫</div><div><div class="taskName">Слушай и узнавай</div><small>5 заданий на слух без подсказок</small></div></div><div class="task"><div class="taskIcon">✓</div><div><div class="taskName">Мини-тест</div><small>Автоматическая проверка ответов</small></div></div><p class="muted">${session?'Есть незавершённое занятие — продолжи с последнего вопроса.':done?'Результат сохранён. Можно пройти тренировку ещё раз.':'Уже доступны карточки и задания на слух. Чтение и диалоги добавим позже.'}</p><button class="primary" data-action="${session?'resume':done?'view-result':'start'}">${session?'Продолжить тренировку':done?'Посмотреть результат':'Начать тренировку'} →</button>${done&&!session?'<button class="textbutton" data-action="retry">Пройти ещё раз</button>':''}</section><div class="notice">Учебный контент и MP3-озвучка пробные: роботизированный голос, произношение ещё не проверено преподавателем. Не использовать как эталон китайских тонов.</div>`}
 function quiz(){
  const s=state.session;if(!s)return home();
  const key=s.items[s.cursor],listening=key.startsWith('listen:');
  const id=listening?key.slice(7):key,item=VOCAB.find(x=>x.id===id);
- if(!item){state.session=null;write().catch(console.error);return home()}
+ if(!item)throw new Error('Слово отсутствует в учебном пакете');
  const prior=s.answers.find(x=>x.questionKey===key||(!x.questionKey&&!listening&&x.wordId===id));
  const isChecked=checked||!!prior,chosen=prior?.choice??selection,options=optionsFor(s,key,item);
  const answers=`<div class="answers">${options.map((a,i)=>`<button class="answer ${chosen===i?'selected':''} ${isChecked&&a===item.ru?'correct':''} ${isChecked&&chosen===i&&a!==item.ru?'wrong':''}" data-choice="${i}" ${isChecked?'disabled':''}>${safe(a)}${isChecked&&a===item.ru?' ✓':isChecked&&chosen===i&&a!==item.ru?' ✕':''}</button>`).join('')}</div>`;
@@ -90,12 +160,73 @@ function quiz(){
  }
  return `${header}<div class="card"><span class="modeTag">字 Слова</span><div class="question">Что означает это слово?</div><div class="hanzi" lang="zh-Hans">${safe(item.hanzi)}</div><div class="pinyin">${isChecked?item.pinyin:'Найди правильный перевод'}</div>${audioButtons(id)}${answers}${isChecked?`<div class="feedback ${options[chosen]===item.ru?'':'bad'}"><strong>${options[chosen]===item.ru?'Верно! 🎉':'Пока не получилось'}</strong><br>${safe(item.hanzi)} (${safe(item.pinyin)}) — ${safe(item.ru)}.</div>`:''}<button class="primary" data-action="${isChecked?'next':'check'}" ${!isChecked&&selection===null?'disabled':''}>${isChecked?s.cursor===s.items.length-1?'Завершить тренировку':'Дальше →':'Проверить ответ'}</button></div>`;
 }
-function result(){const s=todays()||state.sessions[state.sessions.length-1];if(!s)return `<div class="empty">Пока нет завершённых занятий</div><button class="secondary" data-page="home">На главную</button>`;return `<button class="back" data-page="home">← Сегодня</button><span class="eyebrow">Тренировка завершена</span><h1 class="title">Хорошая работа! 🎉</h1><div class="card"><div class="muted">Правильных ответов</div><div class="resultNumber">${s.correct}<span style="font-size:22px;color:#95a39a;letter-spacing:0"> / ${s.total}</span></div><div class="progress"><div style="width:${s.total?s.correct/s.total*100:0}%"></div></div><div class="muted">Ошибки помогут выбрать слова для повторения.</div></div><h2 class="section">Повторить слова</h2><div class="card">${s.answers.filter(a=>!a.correct).length?s.answers.filter(a=>!a.correct).map(a=>{let w=VOCAB.find(w=>w.id===a.wordId);return w?`<div class="history"><strong lang="zh-Hans">${w.hanzi}</strong> · ${w.pinyin}<div class="muted">${w.ru} · ${a.mode==='listening'?'На слух':'По иероглифу'}</div></div>`:''}).join(''):'<p class="muted">Сегодня все ответы правильные!</p>'}</div><button class="primary" data-page="progress">Посмотреть прогресс →</button>`}
+function result(){const s=state.sessions[state.sessions.length-1];if(!s)return `<div class="empty">Пока нет завершённых занятий</div><button class="secondary" data-page="home">На главную</button>`;return `<button class="back" data-page="home">← Сегодня</button><span class="eyebrow">Тренировка завершена</span><h1 class="title">Хорошая работа! 🎉</h1><div class="card"><div class="muted">Правильных ответов</div><div class="resultNumber">${s.correct}<span style="font-size:22px;color:#95a39a;letter-spacing:0"> / ${s.total}</span></div><div class="progress"><div style="width:${s.total?s.correct/s.total*100:0}%"></div></div><div class="muted">Ошибки помогут выбрать слова для повторения.</div></div><h2 class="section">Повторить слова</h2><div class="card">${s.answers.filter(a=>!a.correct).length?s.answers.filter(a=>!a.correct).map(a=>{let w=VOCAB.find(w=>w.id===a.wordId);return w?`<div class="history"><strong lang="zh-Hans">${w.hanzi}</strong> · ${w.pinyin}<div class="muted">${w.ru} · ${a.mode==='listening'?'На слух':'По иероглифу'}</div></div>`:''}).join(''):'<p class="muted">Сегодня все ответы правильные!</p>'}</div><button class="primary" data-page="progress">Посмотреть прогресс →</button><button class="textbutton" data-action="retry">Пройти ещё раз</button>`}
 function vocab(){return `<h1 class="title">Словарь</h1><p class="muted">10 демонстрационных слов с пробной MP3-озвучкой. Счётчики основаны на твоих ответах.</p><div id="audio-message" class="audioError hidden" role="alert"></div><div class="words">${VOCAB.map(w=>{let p=state.wordProgress[w.id]||{seen:0,correct:0};return `<div class="word"><div><strong lang="zh-Hans">${w.hanzi}</strong> <small>${w.pinyin}</small><div class="muted">${w.ru}</div><div class="speakerRow"><button class="audioBtn" data-speak="${w.id}">▶ Слушать</button><button class="audioBtn" data-speak-slow="${w.id}">Медленно</button></div></div><em>${p.seen?`${p.correct}/${p.seen} верно`:'Не проверено'}</em></div>`}).join('')}</div>`}
-function progress(){let ss=state.sessions;let answers=ss.flatMap(s=>s.answers);let correct=answers.filter(a=>a.correct).length;let attempted=Object.values(state.wordProgress).filter(v=>v.seen>0).length;return `<h1 class="title">Мой прогресс</h1><p class="muted">Всё, что ты сделал, сохраняется на этом устройстве.</p><div class="statgrid"><div class="stat"><small>Занятий</small><strong>${ss.length}</strong></div><div class="stat"><small>Проверено слов</small><strong>${attempted}</strong></div><div class="stat"><small>Ответов</small><strong>${answers.length}</strong></div><div class="stat"><small>Точность</small><strong>${answers.length?Math.round(correct/answers.length*100):0}%</strong></div></div><h2 class="section">Аудирование</h2><div class="card">${(()=>{let audio=answers.filter(a=>a.mode==='listening');return audio.length?`<strong>${audio.filter(a=>a.correct).length} из ${audio.length}</strong><p class="muted">Верно на слух · ${Math.round(audio.filter(a=>a.correct).length/audio.length*100)}%</p>`:'<p class="muted">Результаты появятся после пяти аудиозаданий.</p>'})()}</div><h2 class="section">История занятий</h2><div class="card">${ss.length?ss.slice().reverse().map(s=>`<div class="history row"><div><strong>${txtDate(s.day)}</strong><div class="mini">Тренировка слов</div></div><strong>${s.correct}/${s.total}</strong></div>`).join(''):'<div class="empty">Здесь появятся первые результаты</div>'}</div><h2 class="section">Резервная копия</h2><p class="muted">Выгрузи прогресс перед сменой телефона или браузера.</p><button class="secondary" data-action="export">Скачать JSON с результатами</button><div class="notice">Это локальное хранение: на другом смартфоне результаты автоматически не появятся. Импорт резервной копии подключим на следующем этапе.</div>`}
-function bind(){document.querySelectorAll('[data-speak]').forEach(el=>el.addEventListener('click',()=>playWord(el.dataset.speak)));document.querySelectorAll('[data-speak-slow]').forEach(el=>el.addEventListener('click',()=>playWord(el.dataset.speakSlow,true)));document.querySelectorAll('[data-page]').forEach(el=>el.addEventListener('click',()=>navigate(el.dataset.page)));document.querySelectorAll('[data-choice]').forEach(el=>el.addEventListener('click',()=>{selection=Number(el.dataset.choice);render()}));document.querySelectorAll('[data-action]').forEach(el=>el.addEventListener('click',()=>act(el.dataset.action)))}
-async function act(a){if(a==='start'){if(todays())return navigate('result');state.session={id:(window.crypto&&typeof window.crypto.randomUUID==='function')?window.crypto.randomUUID():String(Date.now()),day:day(),items:[...VOCAB.map(x=>x.id),...shuffle(VOCAB).slice(0,5).map(x=>'listen:'+x.id)],optionSets:{},cursor:0,answers:[],startedAt:new Date().toISOString()};state.session.items.forEach(key=>{const id=key.startsWith('listen:')?key.slice(7):key;state.session.optionSets[key]=shuffle(VOCAB.find(w=>w.id===id).d)});await write();index=0;return navigate('quiz')}if(a==='resume'){index=state.session.cursor;return navigate('quiz')}if(a==='back')return navigate('home');if(a==='view-result')return navigate('result');if(a==='check'){if(selection===null)return;let s=state.session,w=VOCAB.find(x=>x.id===s.items[s.cursor].replace(/^listen:/,''));if(s.answers.some(x=>x.questionKey===s.items[s.cursor]||(!x.questionKey&&x.wordId===w.id)))return;const questionKey=s.items[s.cursor];let correct=optionsFor(s,questionKey,w)[selection]===w.ru;s.answers.push({questionKey,wordId:w.id,mode:questionKey.startsWith('listen:')?'listening':'visual',choice:selection,correct,at:new Date().toISOString()});let p=state.wordProgress[w.id]||{seen:0,correct:0};p.seen++;if(correct)p.correct++;p.lastSeenAt=new Date().toISOString();state.wordProgress[w.id]=p;await write();checked=true;return render()}if(a==='next'){let s=state.session;if(!s.answers.some(x=>x.questionKey===s.items[s.cursor]||(!x.questionKey&&x.wordId===s.items[s.cursor])))return;if(s.cursor<s.items.length-1){s.cursor++;index=s.cursor;checked=false;selection=null;await write();return render()}let record={...s,total:s.answers.length,correct:s.answers.filter(a=>a.correct).length,completedAt:new Date().toISOString()};state.sessions.push(record);state.session=null;await write();return navigate('result')}if(a==='export'){let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});let url=URL.createObjectURL(blob);let link=document.createElement('a');link.href=url;link.download=`hsk-quest-backup-${day()}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),5000)}}
+function progress(){let ss=state.sessions;let answers=ss.flatMap(s=>s.answers);let correct=answers.filter(a=>a.correct).length;let attempted=Object.values(state.wordProgress).filter(v=>v.seen>0).length;return `<h1 class="title">Мой прогресс</h1><p class="muted">Всё, что ты сделал, сохраняется на этом устройстве.</p><div class="statgrid"><div class="stat"><small>Занятий</small><strong>${uniqueLessons()}</strong></div><div class="stat"><small>Проверено слов</small><strong>${attempted}</strong></div><div class="stat"><small>Ответов</small><strong>${answers.length}</strong></div><div class="stat"><small>Точность</small><strong>${answers.length?Math.round(correct/answers.length*100):0}%</strong></div></div><h2 class="section">Аудирование</h2><div class="card">${(()=>{let audio=answers.filter(a=>a.mode==='listening');return audio.length?`<strong>${audio.filter(a=>a.correct).length} из ${audio.length}</strong><p class="muted">Верно на слух · ${Math.round(audio.filter(a=>a.correct).length/audio.length*100)}%</p>`:'<p class="muted">Результаты появятся после пяти аудиозаданий.</p>'})()}</div><h2 class="section">История попыток · ${ss.length}</h2><div class="card">${ss.length?ss.slice().reverse().map(s=>`<div class="history row"><div><strong>${txtDate(s.day)}</strong><div class="mini">Тренировка слов · попытка ${ss.slice(0,ss.indexOf(s)+1).filter(x=>lessonKey(x)===lessonKey(s)).length}</div></div><strong>${s.correct}/${s.total}</strong></div>`).join(''):'<div class="empty">Здесь появятся первые результаты</div>'}</div><h2 class="section">Резервная копия</h2><p class="muted">Выгрузи прогресс перед сменой телефона или браузера.</p><button class="secondary" data-action="export">Скачать JSON с результатами</button><div class="notice">Это локальное хранение: на другом смартфоне результаты автоматически не появятся. Импорт резервной копии подключим на следующем этапе.</div><h2 class="section">Управление данными</h2><button class="secondary" data-action="reset">Сбросить прогресс</button><p class="mini">Удаляет историю и незавершённую тренировку после подтверждения. Перед сбросом скачай резервную копию.</p>`}
+// One delegated handler for both persistent navigation and replaceable screen content.
+let eventsBound=false;
+function bind(){if(eventsBound)return;eventsBound=true;document.addEventListener('click',event=>{
+ const el=event.target.closest('button');if(!el||el.disabled||busy)return;
+ if(el.dataset.action){void act(el.dataset.action);return}
+ if(readOnly||!state)return;
+ if(el.dataset.speak){playWord(el.dataset.speak);return}
+ if(el.dataset.speakSlow){playWord(el.dataset.speakSlow,true);return}
+ if(el.dataset.page){navigate(el.dataset.page);return}
+ if(el.dataset.choice!==undefined){selection=Number(el.dataset.choice);render()}
+})}
+function exportData(){
+ const blob=new Blob([JSON.stringify(readOnly?rawSaved:state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+ link.href=url;link.download=`hsk-quest-backup-${day()}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),5000);
+}
+async function act(action){
+ if(busy)return;
+ if(action==='export'){exportData();return}
+ if(action==='reload'){location.reload();return}
+ if(readOnly||!state)return;
+ if(action==='back'){navigate('home');return}
+ if(action==='view-result'){navigate('result');return}
+ if(action==='resume'){if(state.session)navigate('quiz');return}
+ if(!['start','retry','check','next','reset'].includes(action))return;
+ if(action==='reset'&&!window.confirm('Сбросить весь прогресс, историю попыток и незавершённую тренировку? Это действие нельзя отменить.'))return;
+ if((action==='start'||action==='retry')&&state.session){navigate('quiz');return}
+ const candidate=structuredClone(state);let destination=page,advance=false;
+ if(action==='reset'){Object.assign(candidate,newState());destination='progress';advance=true}
+ if(action==='start'||action==='retry'){
+  const previous=action==='retry'?state.sessions[state.sessions.length-1]:todays();
+  candidate.session={id:window.crypto?.randomUUID?.()||`${Date.now()}-${Math.random().toString(36).slice(2)}`,day:day(),lessonKey:previous?lessonKey(previous):'daily:'+day(),items:[...VOCAB.map(x=>x.id),...shuffle(VOCAB).slice(0,5).map(x=>'listen:'+x.id)],optionSets:{},cursor:0,answers:[],startedAt:new Date().toISOString()};
+  candidate.session.items.forEach(key=>{candidate.session.optionSets[key]=shuffle(VOCAB.find(w=>w.id===key.replace(/^listen:/,'')).d)});
+  destination='quiz';advance=true;
+ }
+ if(action==='check'||action==='next'){
+  const s=candidate.session;if(!s)return;const key=s.items[s.cursor],word=VOCAB.find(w=>w.id===key.replace(/^listen:/,'')),prior=s.answers.find(a=>a.questionKey===key);
+  if(action==='check'){
+   if(prior||!isCount(selection)||selection>=optionsFor(s,key,word).length)return;
+   const correct=optionsFor(s,key,word)[selection]===word.ru;
+   s.answers.push({questionKey:key,wordId:word.id,mode:key.startsWith('listen:')?'listening':'visual',choice:selection,correct,at:new Date().toISOString()});
+   const p=candidate.wordProgress[word.id]||{seen:0,correct:0};p.seen++;if(correct)p.correct++;p.lastSeenAt=new Date().toISOString();candidate.wordProgress[word.id]=p;
+  }else{
+   if(!prior)return;
+   if(s.cursor<s.items.length-1)s.cursor++;
+   else{candidate.sessions.push({...s,total:s.answers.length,correct:s.answers.filter(a=>a.correct).length,completedDay:day(),completedAt:new Date().toISOString()});candidate.session=null;destination='result'}
+   advance=true;stopAudio();
+  }
+ }
+ setBusy(true);storageMessage('Сохраняем…');
+ try{
+  await commit(candidate);
+  if(advance){stopAudio();selection=null;checked=false}else checked=true;
+  page=destination;storageMessage('');render();
+ }catch(error){console.error(error);storageMessage(error.message||'Не удалось сохранить. Повтори действие.');}
+ finally{setBusy(false)}
+}
 function startupError(err){console.error('HSK Quest startup error:',err);const c=document.querySelector('#content');if(c)c.innerHTML='<h1 class="title">Не удалось запустить HSK Quest</h1><p class="muted">Приложение столкнулось с ошибкой запуска. Ваши прошлые результаты не удалены.</p><section class="card"><p class="muted">Попробуйте обновить страницу без кэша или открыть её в обычном браузере Safari/Chrome. Не очищайте данные сайта.</p><button class="secondary" onclick="location.reload()">Повторить запуск</button><p class="mini" style="margin-top:16px;overflow-wrap:anywhere">Ошибка: '+safe(err?.message||String(err))+'</p></section>'}
-window.addEventListener('unhandledrejection',event=>{console.error('HSK Quest async error:',event.reason);const message=document.querySelector('#audio-message');if(message){message.textContent='Не удалось выполнить действие. Попробуйте обновить страницу.';message.classList.remove('hidden')}});
-(async()=>{try{db=await openDB();const saved=await read();state=saved&&typeof saved==='object'?saved:newState();if(!Array.isArray(state.sessions))state.sessions=[];if(!state.wordProgress||typeof state.wordProgress!=='object')state.wordProgress={};if(state.session&&(!Array.isArray(state.session.items)||!Array.isArray(state.session.answers)))state.session=null;render()}catch(err){startupError(err)}})();
+window.addEventListener('unhandledrejection',event=>{console.error(event.reason);storageMessage('Не удалось выполнить действие. Сохранённые результаты остались в базе. Обнови страницу.');});
+async function startup(){
+ bind();
+ try{db=await openDB();rawSaved=await read();savedSnapshot=JSON.stringify(rawSaved);
+  try{state=validateState(rawSaved)}catch(error){recovery(error);return}
+  render();
+ }catch(error){readOnly=true;startupError(error)}
+}
+startup();
 </script></body></html>
