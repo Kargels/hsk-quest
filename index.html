@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fbf8f1"><title>HSK Quest · Глеб · v0.3.4</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fbf8f1"><title>HSK Quest · Глеб · v0.4.0</title>
 <style>
 :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#242a2a;background:#fbf8f1;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100dvh}button{font:inherit;cursor:pointer}button:disabled{opacity:.45;cursor:default}.app{max-width:490px;margin:auto;min-height:100dvh;padding:22px 20px 102px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.logo{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.5px;font-size:19px}.mark{background:#e85b48;border-radius:14px;color:white;padding:10px;font-size:19px}.eyebrow{font-size:12px;letter-spacing:.1em;font-weight:800;color:#777f7b;text-transform:uppercase}.date{font-size:13px;color:#67736e}.title{font-size:32px;letter-spacing:-1.2px;line-height:1.13;margin:10px 0 8px}.muted{color:#6b7773;font-size:14px;line-height:1.5}.card{background:#fff;border:1px solid #ece9e0;border-radius:23px;padding:21px;margin:18px 0;box-shadow:0 7px 28px #3b4a3610}.hero{background:#173e36;color:white;border:0;padding:25px}.hero .muted{color:#d0ded8}.hero .eyebrow{color:#a6c4b9}.hero strong{font-size:26px}.progress{height:10px;background:#dfe8e1;border-radius:20px;overflow:hidden;margin:15px 0}.progress>div{height:100%;background:#ea765d;transition:width .25s}.hero .progress{background:#386155}.primary{width:100%;border:0;background:#e65a45;color:white;border-radius:17px;padding:17px 18px;font-weight:800;min-height:54px;box-shadow:0 5px 12px #e75a4325}.secondary{width:100%;border:1px solid #d9ded8;background:white;color:#263b34;border-radius:15px;padding:14px;font-weight:700;min-height:49px}.textbutton{border:0;background:transparent;color:#4f7063;font-weight:700;padding:10px}.section{font-weight:850;font-size:18px;margin-top:26px}.task{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #eef0eb}.task:last-child{border:0}.taskIcon{width:48px;height:48px;flex:none;display:grid;place-items:center;background:#f6eee4;border-radius:15px;font-size:23px}.taskName{font-weight:750}.task small{color:#77827c;display:block;margin-top:4px}.tag{margin-left:auto;font-size:12px;color:#6b8478}.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e7ebe6;padding:10px max(12px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-bottom));display:flex;justify-content:center;gap:10px;z-index:10}.nav button{background:none;border:0;min-width:94px;color:#7c8983;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:5px}.nav button b{font-size:22px}.nav button.active{color:#db5845}.hidden{display:none!important}.question{font-size:14px;color:#6d7872;font-weight:650;margin-top:20px}.hanzi{font-size:83px;line-height:1.5;text-align:center;margin:22px 0 8px;font-weight:500;font-family:'PingFang SC','Noto Sans CJK SC',system-ui,sans-serif}.pinyin{text-align:center;color:#738079;font-size:19px;min-height:25px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:24px 0}.answer{border:2px solid #e8e9e3;background:white;min-height:75px;border-radius:17px;padding:12px;color:#26312e;font-weight:750;font-size:17px;overflow-wrap:anywhere}.answer.selected{border-color:#df624b;background:#fff3ed}.answer.correct{border-color:#438b6d;background:#ecf8f0}.answer.wrong{border-color:#d45a55;background:#fff0ee}.feedback{border-radius:15px;background:#e8f5e9;padding:16px;line-height:1.5;margin:14px 0}.feedback.bad{background:#fff0e9}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.mini{font-size:12px;color:#7a8580}.pill{padding:6px 11px;background:#f8eee8;border-radius:40px;color:#a15342;font-weight:750;font-size:12px}.resultNumber{font-size:64px;font-weight:850;letter-spacing:-3px;line-height:1.2}.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.stat{padding:18px;background:#f5f7f3;border-radius:17px}.stat strong{display:block;font-size:29px;margin-top:5px}.history{padding:13px 0;border-bottom:1px solid #e8ebe7}.history:last-child{border-bottom:0}.notice{background:#fff7e9;border:1px solid #f3deb3;padding:12px;border-radius:13px;color:#8b6228;font-size:12px;line-height:1.5;margin-top:18px}.back{border:0;background:transparent;font-weight:750;color:#5b7066;font-size:15px;padding:10px 0}.empty{padding:35px 12px;text-align:center;color:#7b8881}.words{display:grid;gap:9px}.word{display:flex;justify-content:space-between;gap:10px;border:1px solid #e8ebe5;background:white;border-radius:13px;padding:13px}.word strong{font-size:23px}.word em{font-size:12px;color:#78847c;font-style:normal}.toggle{display:flex;gap:8px}.toggle button{flex:1;border-radius:13px;padding:12px;border:1px solid #ddd;background:white;font-weight:700}.toggle button.active{background:#1b4d3f;color:white}footer{text-align:center;font-size:11px;color:#98a39c;margin-top:25px}@media(min-width:600px){body{background:#e9eee9}.app{background:#fbf8f1;box-shadow:0 0 40px #23382d15}.nav{max-width:490px;margin:auto}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .audioControls{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.audioBtn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #b9cfc3;background:#edf6ef;color:#174a39;border-radius:14px;padding:12px 14px;font-weight:800;min-height:47px}.audioBtn:disabled{opacity:.5}.audioStatus{font-size:12px;color:#6b7773;line-height:1.4}.audioError{background:#fff0e9;color:#924c32;border-radius:12px;padding:11px;font-size:13px;margin:10px 0}.answer:focus-visible,.audioBtn:focus-visible{outline:3px solid #2a8468;outline-offset:2px}.modeTag{display:inline-block;border-radius:99px;background:#e6f0eb;color:#265c49;padding:6px 10px;font-size:12px;font-weight:800}.speakerRow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.speakerRow button{padding:8px 11px;min-height:38px}.noticeLine{margin:10px 0 0}.srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-/* Listening task UI v0.3.4 */
+/* Listening task UI v0.4.0 */
 .listenStage{text-align:center;padding:24px 4px 8px}
 .listenPlay{width:118px;height:118px;border:12px solid #e5f3ea;border-radius:50%;background:#289361;color:white;display:inline-flex;align-items:center;justify-content:center;font-size:46px;box-shadow:0 4px 14px #155d3520;cursor:pointer}
 .listenPlay:active{transform:scale(.97)}
@@ -26,7 +26,10 @@
 .listenFeedback.wrong{color:#a34438}
 .listenNext{background:#195842}
 @media(max-width:380px){.listenPlay{width:102px;height:102px}.listenWordHanzi{font-size:31px}}
-</style></head><body><main class="app"><header class="top"><div class="logo"><span class="mark">学</span>HSK Quest</div><span class="pill">HSK 2 · 3.0</span></header><div id="storage-message" class="notice hidden" role="alert"></div><div id="content"></div><footer>HSK Quest v0.3.4 · результаты хранятся на этом устройстве · MP3 пока пробные</footer></main><nav class="nav" id="nav"><button data-page="home"><b>⌂</b>Сегодня</button><button data-page="vocab"><b>字</b>Слова</button><button data-page="progress"><b>▥</b>Прогресс</button></nav>
+.pinyinInput{display:block;width:100%;margin:14px 0;padding:15px;border:2px solid #d9ded8;border-radius:15px;font:inherit;font-size:20px}.pinyinInputHints{margin-top:-6px;margin-bottom:16px}.pinyinInputHints .textbutton{padding:6px 0;min-height:36px}.pinyinInputHints .muted{margin:6px 0}.pinyinInputHints .muted:empty{display:none}.pinyinContinue{margin-top:16px}.pinyinInput:focus-visible{outline:3px solid #2a8468;outline-offset:2px}.toneGroup{min-width:0;border:0;padding:0;margin:20px 0}.toneGroup legend{font-weight:750;margin-bottom:10px}.toneOptions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}.toneOption{min-width:0;text-align:center}.toneOptions .answer{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;gap:2px;padding:8px 2px;min-height:76px}.toneNumber{font-size:14px;line-height:1.2}.toneSign{font-size:27px;font-weight:500;line-height:1.35}.toneName{display:block;margin-top:6px;font-size:11px;line-height:1.4;color:#566e60;white-space:nowrap}.toneResults{display:grid;gap:12px;margin-top:10px}.toneDetail{min-width:0;overflow-wrap:anywhere}.toneMistake{border-left:3px solid #d45a55;padding-left:12px;color:#843d32}.toneDetail p{margin:6px 0;line-height:1.5}.toneDetail .toneReason{font-size:13px;color:#6b5149}.history p{overflow-wrap:anywhere}details summary{cursor:pointer;font-weight:750}
+[data-action="py-correct"] + [data-action="py-next"]{margin-top:16px}
+</style></head><body><main class="app"><header class="top"><div class="logo"><span class="mark">学</span>HSK Quest</div><span class="pill">HSK 2 · 3.0</span></header><div id="storage-message" class="notice hidden" role="alert"></div><div id="content"></div><footer>HSK Quest v0.4.0 · результаты хранятся на этом устройстве · MP3 пока пробные</footer></main><nav class="nav" id="nav"><button data-page="home"><b>⌂</b>Сегодня</button><button data-page="vocab"><b>字</b>Слова</button><button data-page="progress"><b>▥</b>Прогресс</button></nav>
+<script src="pinyin.js?v=0.4.0-hint-layout"></script>
 <script>
 'use strict';
 // Демонстрационный учебный пакет, НЕ официальный список HSK 3.0.
@@ -66,7 +69,7 @@ function write(candidate){return new Promise((resolve,reject)=>{
  tx.onabort=()=>reject(new Error(conflict?'Прогресс изменён в другой вкладке. Обнови страницу перед продолжением.':'Не удалось сохранить прогресс. Предыдущие данные сохранены. Повтори действие.'));
 })}
 function storageMessage(message){const el=$('#storage-message');if(el){el.textContent=message;el.classList.toggle('hidden',!message)}}
-function setBusy(value){busy=value;document.querySelectorAll('button').forEach(el=>{if(value){el.dataset.wasDisabled=String(el.disabled);el.disabled=true}else if('wasDisabled' in el.dataset){el.disabled=el.dataset.wasDisabled==='true';delete el.dataset.wasDisabled}})}
+function setBusy(value){busy=value;document.querySelectorAll('button,input').forEach(el=>{if(value){el.dataset.wasDisabled=String(el.disabled);el.disabled=true}else if('wasDisabled' in el.dataset){el.disabled=el.dataset.wasDisabled==='true';delete el.dataset.wasDisabled}})}
 async function commit(candidate){
  await write(candidate);
  state=candidate;rawSaved=candidate;savedSnapshot=JSON.stringify(candidate);
@@ -100,14 +103,14 @@ function validateState(saved){
    if(answer.wordId!==word.id||!isCount(answer.choice)||answer.choice>=4||typeof answer.correct!=='boolean'||answer.correct!==(optionsFor(s,key,word)[answer.choice]===word.ru))fail();
    const mode=key.startsWith('listen:')?'listening':'visual';
    if(answer.mode!==undefined&&answer.mode!==mode)fail();
-   // Legacy visual answers did not have questionKey or mode. Normalize only in memory.
-   answer.questionKey=key;answer.mode=mode;
+   // Validate legacy answers without rewriting their historical representation.
   }
   if(s.items.slice(0,s.cursor).some(key=>!keys.has(key)))fail();
   if(finished&&(s.answers.length!==s.items.length||s.total!==s.answers.length||s.correct!==s.answers.filter(a=>a.correct).length))fail();
  }
  copy.sessions.forEach(s=>session(s,true));
  if(copy.session!==null)session(copy.session,false);
+ validatePinyin(copy.pinyin,fail);
  return copy;
 }
 function recovery(err){
@@ -136,11 +139,11 @@ const newState=()=>({version:1,session:null,sessions:[],wordProgress:{},createdA
 const day=()=>{let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
 const txtDate=d=>new Date(d+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'});
 function navigate(to){if(busy||readOnly)return;stopAudio();page=to;selection=null;checked=false;render()}
-function render(){const nav=['home','vocab','progress'].includes(page);$('#nav').classList.toggle('hidden',!nav);document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));let node=$('#content');if(page==='home')node.innerHTML=home();if(page==='quiz')node.innerHTML=quiz();if(page==='result')node.innerHTML=result();if(page==='vocab')node.innerHTML=vocab();if(page==='progress')node.innerHTML=progress();}
+function render(){const nav=['home','vocab','progress'].includes(page);$('#nav').classList.toggle('hidden',!nav);document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));let node=$('#content');if(page==='home')node.innerHTML=home();if(page==='quiz')node.innerHTML=quiz();if(page==='result')node.innerHTML=result();if(page==='vocab')node.innerHTML=vocab();if(page==='progress')node.innerHTML=progress();if(page==='pinyin-menu')node.innerHTML=pinyinMenu();if(page==='pinyin')node.innerHTML=pinyinExercise();}
 function todays(){return state.sessions.slice().reverse().find(x=>(x.completedDay||x.day)===day())}
 function lessonKey(s){return s.lessonKey||'daily:'+s.day}
 function uniqueLessons(){return new Set(state.sessions.map(lessonKey)).size}
-function home(){let session=state.session,done=todays();let count=uniqueLessons();return `<span class="eyebrow">${safe(new Date().toLocaleDateString('ru-RU',{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="title">Привет, Глеб! 👋</h1><p class="muted">Каждый день — ещё один шаг к китайскому.</p><section class="card hero"><div class="eyebrow">Твоя цель</div><div style="margin-top:10px"><strong>HSK 2</strong> · май 2027</div><p class="muted">Тренируйся понемногу, но регулярно.</p><div class="progress"><div style="width:${Math.min(100,count/40*100)}%"></div></div><div class="mini" style="color:#c4ddd0">${count} занятий завершено · первый этап 40 занятий</div></section><h2 class="section">${done?'Сегодня выполнено ✨':'Тренировка сегодня'}</h2><section class="card"><div class="row"><strong>${done?'Отличная работа!':'Слова и короткий тест'}</strong><span class="pill">${done?'Готово':'15 заданий'}</span></div><div class="task"><div class="taskIcon">字</div><div><div class="taskName">Знакомство со словами</div><small>10 слов · иероглифы и значения</small></div></div><div class="task"><div class="taskIcon">♫</div><div><div class="taskName">Слушай и узнавай</div><small>5 заданий на слух без подсказок</small></div></div><div class="task"><div class="taskIcon">✓</div><div><div class="taskName">Мини-тест</div><small>Автоматическая проверка ответов</small></div></div><p class="muted">${session?'Есть незавершённое занятие — продолжи с последнего вопроса.':done?'Результат сохранён. Можно пройти тренировку ещё раз.':'Уже доступны карточки и задания на слух. Чтение и диалоги добавим позже.'}</p><button class="primary" data-action="${session?'resume':done?'view-result':'start'}">${session?'Продолжить тренировку':done?'Посмотреть результат':'Начать тренировку'} →</button>${done&&!session?'<button class="textbutton" data-action="retry">Пройти ещё раз</button>':''}</section><div class="notice">Учебный контент и MP3-озвучка пробные: роботизированный голос, произношение ещё не проверено преподавателем. Не использовать как эталон китайских тонов.</div>`}
+function home(){let session=state.session,done=todays();let count=uniqueLessons();return `<span class="eyebrow">${safe(new Date().toLocaleDateString('ru-RU',{weekday:'long',day:'numeric',month:'long'}))}</span><h1 class="title">Привет, Глеб! 👋</h1><p class="muted">Каждый день — ещё один шаг к китайскому.</p><section class="card hero"><div class="eyebrow">Твоя цель</div><div style="margin-top:10px"><strong>HSK 2</strong> · май 2027</div><p class="muted">Тренируйся понемногу, но регулярно.</p><div class="progress"><div style="width:${Math.min(100,count/40*100)}%"></div></div><div class="mini" style="color:#c4ddd0">${count} занятий завершено · первый этап 40 занятий</div></section><h2 class="section">${done?'Сегодня выполнено ✨':'Тренировка сегодня'}</h2><section class="card"><div class="row"><strong>${done?'Отличная работа!':'Слова и короткий тест'}</strong><span class="pill">${done?'Готово':'15 заданий'}</span></div><div class="task"><div class="taskIcon">字</div><div><div class="taskName">Знакомство со словами</div><small>10 слов · иероглифы и значения</small></div></div><div class="task"><div class="taskIcon">♫</div><div><div class="taskName">Слушай и узнавай</div><small>5 заданий на слух без подсказок</small></div></div><div class="task"><div class="taskIcon">✓</div><div><div class="taskName">Мини-тест</div><small>Автоматическая проверка ответов</small></div></div><p class="muted">${session?'Есть незавершённое занятие — продолжи с последнего вопроса.':done?'Результат сохранён. Можно пройти тренировку ещё раз.':'Уже доступны карточки и задания на слух. Чтение и диалоги добавим позже.'}</p><button class="primary" data-action="${session?'resume':done?'view-result':'start'}">${session?'Продолжить тренировку':done?'Посмотреть результат':'Начать тренировку'} →</button>${done&&!session?'<button class="textbutton" data-action="retry">Пройти ещё раз</button>':''}</section><section class="card"><h2 class="section" style="margin-top:0">Напиши пиньинь</h2><p class="muted">Отдельное упражнение: написание слова и тоны.</p><button class="secondary" data-page="pinyin-menu">Открыть упражнение →</button></section><div class="notice">Учебный контент и MP3-озвучка пробные: роботизированный голос, произношение ещё не проверено преподавателем. Не использовать как эталон китайских тонов.</div>`}
 function quiz(){
  const s=state.session;if(!s)return home();
  const key=s.items[s.cursor],listening=key.startsWith('listen:');
@@ -169,11 +172,13 @@ function bind(){if(eventsBound)return;eventsBound=true;document.addEventListener
  const el=event.target.closest('button');if(!el||el.disabled||busy)return;
  if(el.dataset.action){void act(el.dataset.action);return}
  if(readOnly||!state)return;
+ if(el.dataset.pyTone!==undefined&&page==='pinyin'&&pinyinDraft?.stage==='tones'){pinyinDraft.tones[Number(el.dataset.pySyllable)]=Number(el.dataset.pyTone);render();return}
  if(el.dataset.speak){playWord(el.dataset.speak);return}
  if(el.dataset.speakSlow){playWord(el.dataset.speakSlow,true);return}
  if(el.dataset.page){navigate(el.dataset.page);return}
  if(el.dataset.choice!==undefined){selection=Number(el.dataset.choice);render()}
-})}
+});document.addEventListener('input',event=>{if(!busy&&!readOnly&&event.target.id==='pinyin-input'&&pinyinDraft?.stage==='input')pinyinDraft.input=event.target.value});
+ document.addEventListener('keydown',event=>{if(event.target.id==='pinyin-input'&&event.key==='Enter'&&!event.isComposing){event.preventDefault();void act('py-continue')}});}
 function exportData(){
  const blob=new Blob([JSON.stringify(readOnly?rawSaved:state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
  link.href=url;link.download=`hsk-quest-backup-${day()}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),5000);
@@ -183,6 +188,7 @@ async function act(action){
  if(action==='export'){exportData();return}
  if(action==='reload'){location.reload();return}
  if(readOnly||!state)return;
+ if(action.startsWith('py-')){await pinyinAction(action);return}
  if(action==='back'){navigate('home');return}
  if(action==='view-result'){navigate('result');return}
  if(action==='resume'){if(state.session)navigate('quiz');return}
@@ -190,7 +196,7 @@ async function act(action){
  if(action==='reset'&&!window.confirm('Сбросить весь прогресс, историю попыток и незавершённую тренировку? Это действие нельзя отменить.'))return;
  if((action==='start'||action==='retry')&&state.session){navigate('quiz');return}
  const candidate=structuredClone(state);let destination=page,advance=false;
- if(action==='reset'){Object.assign(candidate,newState());destination='progress';advance=true}
+ if(action==='reset'){Object.assign(candidate,newState());delete candidate.pinyin;destination='progress';advance=true}
  if(action==='start'||action==='retry'){
   const previous=action==='retry'?state.sessions[state.sessions.length-1]:todays();
   candidate.session={id:window.crypto?.randomUUID?.()||`${Date.now()}-${Math.random().toString(36).slice(2)}`,day:day(),lessonKey:previous?lessonKey(previous):'daily:'+day(),items:[...VOCAB.map(x=>x.id),...shuffle(VOCAB).slice(0,5).map(x=>'listen:'+x.id)],optionSets:{},cursor:0,answers:[],startedAt:new Date().toISOString()};
@@ -198,7 +204,7 @@ async function act(action){
   destination='quiz';advance=true;
  }
  if(action==='check'||action==='next'){
-  const s=candidate.session;if(!s)return;const key=s.items[s.cursor],word=VOCAB.find(w=>w.id===key.replace(/^listen:/,'')),prior=s.answers.find(a=>a.questionKey===key);
+  const s=candidate.session;if(!s)return;const key=s.items[s.cursor],word=VOCAB.find(w=>w.id===key.replace(/^listen:/,'')),prior=s.answers.find(a=>(a.questionKey??a.wordId)===key);
   if(action==='check'){
    if(prior||!isCount(selection)||selection>=optionsFor(s,key,word).length)return;
    const correct=optionsFor(s,key,word)[selection]===word.ru;
@@ -215,6 +221,7 @@ async function act(action){
  try{
   await commit(candidate);
   if(advance){stopAudio();selection=null;checked=false}else checked=true;
+  if(action==='reset')pinyinDraft=null;
   page=destination;storageMessage('');render();
  }catch(error){console.error(error);storageMessage(error.message||'Не удалось сохранить. Повтори действие.');}
  finally{setBusy(false)}
