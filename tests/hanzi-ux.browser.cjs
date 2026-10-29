@@ -1,0 +1,17 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const out=process.env.HSK_SCREENSHOTS||'/tmp/hsk-v050-ux';fs.mkdirSync(out,{recursive:true});
+(async()=>{
+ const b=await chromium.launch({headless:true,channel:'chrome'});
+ try{for(const width of [320,390]){
+  const context=await b.newContext({viewport:{width,height:844},isMobile:true,hasTouch:true});const p=await context.newPage();const errors=[];p.on('pageerror',e=>errors.push(e.message));
+  await p.goto(process.env.HSK_TEST_URL||'http://127.0.0.1:8766/');await p.locator('[data-page="hanzi-menu"]').click();await p.locator('[data-action="hz-learn"]').click();await p.waitForFunction(()=>hzReady);
+  const before=await p.evaluate(()=>JSON.stringify(hzTraining().current));const meaning=await p.evaluate(()=>VOCAB.find(w=>w.id===hzTraining().current.wordId).ru);assert.equal(await p.locator('h1').innerText(),meaning[0].toUpperCase()+meaning.slice(1));assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth),width);await p.screenshot({path:`${out}/word-${width}.png`,fullPage:true});
+  await p.locator('[data-action="hz-ask-model"]').click();assert.equal(await p.locator('[role="dialog"]').count(),1);await p.screenshot({path:`${out}/confirm-${width}.png`,fullPage:true});await p.locator('[data-action="hz-cancel-model"]').click();await p.waitForFunction(()=>hzReady);assert.equal(await p.evaluate(()=>JSON.stringify(hzTraining().current)),before);
+  await p.locator('[data-action="hz-ask-model"]').click();await p.evaluate(()=>{window.savedWrite=write;write=async()=>{throw Error('Test save failure')}});await p.locator('[data-action="hz-confirm-model"]').click();await p.locator('[data-action="hz-save"]').waitFor({state:'visible'});assert.equal(await p.locator('#hanzi-frame').count(),0);assert.equal(await p.evaluate(()=>hzTraining().records.length),0);await p.evaluate(()=>{write=window.savedWrite});await p.locator('[data-action="hz-save"]').click();await p.waitForFunction(()=>hzReady&&!busy);assert.equal(await p.evaluate(()=>hzTraining().current.status),'incomplete');assert.equal(await p.evaluate(()=>hzRecord(hzTraining()).modelViews.length),1);
+  const first=await p.evaluate(()=>JSON.stringify(hzRecord(hzTraining()).first));const f=p.frames().find(f=>f.url().endsWith('hanzi-frame.html'));assert.equal(await f.evaluate(()=>model),true);assert.equal(await f.evaluate(()=>locked),true);
+  await p.locator('[data-action="hz-animate"]').click();await p.waitForFunction(()=>hzReady,{},{timeout:45000});assert.equal(await p.evaluate(()=>JSON.stringify(hzRecord(hzTraining()).first)),first);assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth),width);await p.screenshot({path:`${out}/sample-${width}.png`,fullPage:true});
+  await p.locator('[data-action="hz-practice"]').click();await p.waitForFunction(()=>hzReady&&!busy);assert.notEqual(await p.evaluate(()=>hzTraining().current.id),JSON.parse(first).id);assert.equal(await p.evaluate(()=>hzTraining().current.sourceId),JSON.parse(first).id);assert.equal(await p.evaluate(()=>hzTraining().current.fullModel),true);assert.equal(await p.evaluate(()=>JSON.stringify(hzRecord(hzTraining()).first)),first);assert.deepEqual(errors,[]);await context.close();console.log(`PASS ${width}px: heading, cancel, failed save, sample, full animation, linked practice`);
+ }}finally{await b.close()}
+})().catch(e=>{console.error(e);process.exitCode=1});
