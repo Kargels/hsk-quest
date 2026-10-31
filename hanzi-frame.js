@@ -2,8 +2,11 @@
 // A disposable frame owns the library's document listeners and animation lifecycle.
 let writer,token,attempt,charData,locked=true,seq=0,model=false;
 const board=document.querySelector('#board');
+const brush=createBrushLayer(board,document.querySelector('#ink path'),()=>!!writer&&!locked&&!model,()=>{
+ if(locked||model)return;writer.cancelQuiz();resume(attempt).catch(()=>{lock();send('load-error')});
+});
 function send(kind,extra={}){parent.postMessage({kind,token,...extra},location.origin)}
-function lock(){locked=true;board.classList.add('lock')}
+function lock(){brush.clear();locked=true;board.classList.add('lock')}
 function validData(d){return d&&Array.isArray(d.strokes)&&d.strokes.length>0&&d.strokes.every(s=>typeof s==='string'&&s.startsWith('M'))&&Array.isArray(d.medians)&&d.medians.length===d.strokes.length&&d.medians.every(points=>Array.isArray(points)&&points.length>1&&points.every(p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)))}
 async function resume(a){
  attempt=a;lock();
@@ -19,7 +22,7 @@ window.addEventListener('message',async event=>{
   if(m.kind==='init'){
    if(writer)return;token=m.token;attempt=m.attempt;model=m.model===true&&!!attempt.endedAt;
    const response=await fetch('hanzi-data/'+encodeURIComponent(attempt.character)+'.json');if(!response.ok)throw Error('data');charData=await response.json();if(!validData(charData)||charData.strokes.length!==m.strokeCount)throw Error('data');
-   writer=HanziWriter.create(board,attempt.character,{width:innerWidth,height:innerWidth,padding:12,showCharacter:false,showOutline:false,strokeColor:'#195842',highlightColor:'#e65a45',strokeFadeDuration:0,charDataLoader:()=>charData});
+   writer=HanziWriter.create(board,attempt.character,{width:innerWidth,height:innerWidth,padding:12,drawingWidth:16,showCharacter:false,showOutline:false,strokeColor:'#195842',highlightColor:'#e65a45',strokeFadeDuration:0,charDataLoader:()=>charData});
    await writer.getCharacterData();if(model){lock();await writer.showCharacter({duration:0})}else await resume(attempt);send('ready');
   }else if(m.kind==='animate-model'&&model){lock();await writer.animateCharacter();send('ready')}
   else if(m.kind==='lock')lock();
@@ -34,4 +37,4 @@ window.addEventListener('message',async event=>{
   }
  }catch(error){lock();send('load-error')}
 });
-window.addEventListener('resize',()=>writer?.updateDimensions({width:innerWidth,height:innerWidth,padding:12}));
+window.addEventListener('resize',()=>{brush.cancel();brush.clear();writer?.updateDimensions({width:innerWidth,height:innerWidth,padding:12})});

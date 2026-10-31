@@ -12,12 +12,15 @@ const url=process.env.HSK_TEST_URL||'http://127.0.0.1:8766/';
  for(const width of [320,390]){
   const context=await browser.newContext({viewport:{width,height:844},hasTouch:true,isMobile:true});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(url);await page.locator('[data-page="hanzi-menu"]').click();await page.locator('[data-action="hz-learn"]').click();await page.waitForFunction(()=>hzReady);
-  const frame=()=>page.frames().find(f=>f.url().endsWith('hanzi-frame.html'));
+  const frame=()=>page.frames().find(f=>new URL(f.url()).pathname.endsWith('/hanzi-frame.html'));
   async function touch(points){
    await page.locator('#hanzi-frame').scrollIntoViewIfNeeded();const box=await page.locator('#hanzi-frame').boundingBox();const session=await context.newCDPSession(page);
    await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:box.x+1+points[0][0],y:box.y+1+points[0][1]}]});
    for(const p of points.slice(1))await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:box.x+1+p[0],y:box.y+1+p[1]}]});
-   await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await session.detach();await page.waitForFunction(()=>!busy);await page.waitForTimeout(80);
+   await frame().waitForFunction(()=>!!document.querySelector('#ink path').getAttribute('d'));
+   assert.equal(await frame().evaluate(()=>[...board.querySelectorAll('path[stroke-linejoin="round"]')].every(p=>getComputedStyle(p).opacity==='0')),true);
+   await page.screenshot({path:`${out}/brush-${width}.png`});
+   await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await session.detach();await page.waitForFunction(()=>!busy);await page.waitForTimeout(80);assert.equal(await frame().locator('#ink path').getAttribute('d'),'');
   }
   async function correct(){const points=await frame().evaluate(()=>{const t=HanziWriter.getScalingTransform(innerWidth,innerWidth,12);return charData.medians[attempt.stroke].map(([x,y])=>[t.x+x*t.scale,innerWidth-t.y-y*t.scale])});await touch(points)}
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth),width);
@@ -26,6 +29,16 @@ const url=process.env.HSK_TEST_URL||'http://127.0.0.1:8766/';
   assert.equal(await frame().evaluate(()=>writer._options.showCharacter),false);assert.equal(await frame().evaluate(()=>writer._options.showOutline),false);
   const char=await page.evaluate(()=>hzTraining().current.character);assert.ok(!(await page.locator('#content').innerText()).includes(char));checks++;
   await page.screenshot({path:`${out}/blank-${width}.png`,fullPage:true});
+  // Interrupted contact must not become an error, hint, restart or accepted stroke.
+  await page.locator('#hanzi-frame').scrollIntoViewIfNeeded();
+  const cancelBox=await page.locator('#hanzi-frame').boundingBox(),cancelSession=await context.newCDPSession(page);
+  const beforeCancel=await page.evaluate(()=>JSON.stringify(hzTraining().current));
+  await cancelSession.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:cancelBox.x+30,y:cancelBox.y+30}]});
+  await cancelSession.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:cancelBox.x+90,y:cancelBox.y+70}]});
+  await cancelSession.send('Input.dispatchTouchEvent',{type:'touchCancel',touchPoints:[]});await cancelSession.detach();
+  await frame().waitForFunction(()=>!locked);
+  assert.equal(await page.evaluate(()=>JSON.stringify(hzTraining().current)),beforeCancel);
+  assert.equal(await frame().locator('#ink path').getAttribute('d'),'');
   for(let i=0;i<2;i++)await touch([[18,18],[60,18],[60,70],[18,70],[18,18]]);
   assert.equal(await page.evaluate(()=>hzTraining().current.errors),2);assert.equal(await page.evaluate(()=>hzTraining().current.hints.length),0);await page.locator('#hz-message').filter({hasText:'попросить подсказку'}).waitFor();checks++;
   await page.locator('[data-action="hz-hint"]').click();await page.waitForFunction(()=>hzReady&&!busy);assert.equal(await page.evaluate(()=>hzTraining().current.hints.length),1);
