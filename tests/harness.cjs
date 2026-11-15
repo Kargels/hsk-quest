@@ -17,14 +17,14 @@ function database(initial){
   }}};return tx;
  };return db;
 }
-function harness(initial){
+function harness(initial,options={}){
  const listeners=[],elements=new Map(),audio=[];
  function element(){return {innerHTML:'',textContent:'',dataset:{},disabled:false,classList:{add(){},remove(){},toggle(){}}}}
  const document={querySelector(s){if(!elements.has(s))elements.set(s,element());return elements.get(s)},querySelectorAll(){return []},addEventListener(type,fn){listeners.push({type,fn})},createElement(){return {click(){}}}};
  class Audio{constructor(url){this.url=url;this.currentTime=0;this.preservesPitch=true;audio.push(this)}play(){return new Promise((res,rej)=>{this.resolve=res;this.reject=rej})}pause(){this.paused=true}}
  const db=database(initial),context=vm.createContext({document,Audio,structuredClone,Date,Math,Blob,URL,setTimeout,console:{error(){}},window:{addEventListener(){},confirm:()=>false,crypto:{randomUUID:require('node:crypto').randomUUID}},location:{reload(){}},testDB:db,testSaved:clone(initial)});
  const run=code=>vm.runInContext(code,context);
- run(source);run('db=testDB;rawSaved=testSaved;savedSnapshot=JSON.stringify(rawSaved);state=validateState(rawSaved)');
+ run(source);if(options.m01)run(fs.readFileSync(path.join(__dirname,'../modules/m01/data.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'../modules/m01/module.js'),'utf8'));run('db=testDB;rawSaved=testSaved;savedSnapshot=JSON.stringify(rawSaved);state=validateState(rawSaved)');
  return {run,db,audio,listeners,elements,context,snapshot:()=>run('JSON.stringify(state)')};
 }
 async function complete(h){
